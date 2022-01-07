@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -17,7 +18,7 @@ public class EmployeeController {
     @PostMapping("saveEmployee")
     public ResponseEntity<String> saveEmployee(@RequestBody Employee employee) {
         employeeRepository.save(employee);
-        return new ResponseEntity<>("saved",HttpStatus.ACCEPTED);
+        return new ResponseEntity<>("saved", HttpStatus.ACCEPTED);
     }
 
     @GetMapping("getEmployee")
@@ -46,6 +47,36 @@ public class EmployeeController {
         Employee employee = employeeRepository.getById(id);
         employeeRepository.delete(employee);
         return "record Deleted..";
+    }
+
+//    spring.jackson.serialization.fail-on-empty-beans=false
+
+    @GetMapping("getEmployee/{id}")
+    public Employee getEmpById(@PathVariable(value = "id") Integer id) {
+        return employeeRepository.getById(id);
+    }
+
+    @GetMapping("getEmployeeOpt/{id}")
+    public Optional<Employee> getEmpByIdOpt(@PathVariable(value = "id") Integer id) {
+        return employeeRepository.findById(id);
+    }
+
+    @GetMapping("getEmpByIdAndName")
+    public Employee getEmpByIdAndName(@RequestParam("id") Integer id,
+                                      @RequestParam("name") String name) {
+        return employeeRepository.findByIdAndName(id, name);
+    }
+
+    @GetMapping("getEmpByIdOrName")
+    public List<Employee> getEmpByIdorName(@RequestParam("id") Integer id,
+                                           @RequestParam("name") String name) {
+        return employeeRepository.findByIdOrName(id, name);
+    }
+
+
+    @GetMapping("getNameStartingWith")
+    public List<Employee> getByNameStartingWith(@RequestParam("name") String name) {
+        return employeeRepository.findByNameStartingWith(name);
     }
 
 

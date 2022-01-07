@@ -37,6 +37,5 @@ public class Company {
     public void getData() {
         employee.show();
         employee1.show();
-
     }
 }

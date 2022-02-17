@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class Java28SeptSpringApplication {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(Java28SeptSpringApplication.class, args);
 
-		Company e = context.getBean(Company.class);
-		e.getData();
-
+			ConfigurableApplicationContext context = SpringApplication.run(Java28SeptSpringApplication.class, args);
+			Company e = context.getBean(Company.class);
+			e.getData();
 	}
 
 	@GetMapping("hii")

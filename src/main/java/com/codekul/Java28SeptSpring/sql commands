@@ -86,7 +86,7 @@ mysql> desc address;
 +------------+-------------+------+-----+---------+-------+
 4 rows in set (0.01 sec)
 
-mysql> insert into student(id,name,email) values(1,'Akash','akash@gmail.com');
+mysql> insert into student(id,name,email,co) values(1,'Akash','akash@gmail.com');
 Query OK, 1 row affected (0.00 sec)
 
 mysql> insert into student(id,name,email) values(2,'Suhas','suhas@gmail.com');

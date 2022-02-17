@@ -1,5 +1,7 @@
 package com.codekul.Java28SeptSpring.onetoone.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,7 +15,8 @@ public class User {
 
     private String email;
 
-    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JsonManagedReference
     private Address address;
 
     public Integer getId() {

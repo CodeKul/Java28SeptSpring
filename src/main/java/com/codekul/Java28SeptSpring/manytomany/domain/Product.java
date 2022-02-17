@@ -1,5 +1,8 @@
 package com.codekul.Java28SeptSpring.manytomany.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,7 +10,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer id ;
 
     private String productName;
 

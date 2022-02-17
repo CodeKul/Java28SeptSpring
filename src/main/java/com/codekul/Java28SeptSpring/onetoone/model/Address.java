@@ -1,5 +1,7 @@
 package com.codekul.Java28SeptSpring.onetoone.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,6 +17,7 @@ public class Address {
 
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
+    @JsonBackReference
     private User user;
 
     public Integer getId() {

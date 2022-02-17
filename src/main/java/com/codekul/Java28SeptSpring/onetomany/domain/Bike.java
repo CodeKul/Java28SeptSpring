@@ -21,7 +21,7 @@ public class Bike {
 
     private String color;
 
-    @OneToMany(mappedBy = "bike",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "bike",cascade = {CascadeType.PERSIST,CascadeType.REMOVE},fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<Parts> parts;
 

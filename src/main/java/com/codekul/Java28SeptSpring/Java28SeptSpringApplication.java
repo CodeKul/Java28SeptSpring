@@ -24,11 +24,14 @@ public class Java28SeptSpringApplication {
 
 
 		BoysStudent obj = context.getBean(BoysStudent.class);
-		obj.study();
+		//jointpoint
+		obj.study(2);
+		//jointpoint
 
-//		GirlStudent obj3 = context.getBean(GirlStudent.class);
-//		obj3.study();
-
+		GirlStudent obj3 = context.getBean(GirlStudent.class);
+		//jointpoint
+		obj3.studyChemistry(5);
+		//jointpoint
 	}
 
 	@GetMapping("hii")

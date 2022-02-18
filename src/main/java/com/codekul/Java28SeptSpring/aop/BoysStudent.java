@@ -7,8 +7,10 @@ import org.springframework.stereotype.Component;
 public class BoysStudent {
 
 
-    public void study(){
-        System.out.println("Boys Study");
+    public int study(int i){
+        System.out.println("Boys Study "+i);
+
+        return 1;
     }
 
 }

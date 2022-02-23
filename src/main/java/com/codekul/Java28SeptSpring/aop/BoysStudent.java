@@ -9,8 +9,11 @@ public class BoysStudent {
 
     public int study(int i){
         System.out.println("Boys Study "+i);
+        return 300;
+    }
 
-        return 1;
+    public void myException(String str){
+        throw new MyException(str);
     }
 
 }

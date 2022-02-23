@@ -25,12 +25,14 @@ public class Java28SeptSpringApplication {
 
 		BoysStudent obj = context.getBean(BoysStudent.class);
 		//jointpoint
-		obj.study(2);
+		int i = obj.study(2);
+		System.out.println(i);
+//		obj.myException("My exception occurred..");
 		//jointpoint
 
-		GirlStudent obj3 = context.getBean(GirlStudent.class);
+//		GirlStudent obj3 = context.getBean(GirlStudent.class);
 		//jointpoint
-		obj3.studyChemistry(5);
+//		obj3.studyChemistry(5);
 		//jointpoint
 	}
 
